@@ -85,7 +85,7 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES vlmcsd luci-app-vlmcsd luci-i18n-vlmcsd-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wol luci-i18n-wol-zh-cn"
 
 # 定时唤醒
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wolplus"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-wolplus"
 
 # FTP服务器
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-vsftpd luci-i18n-vsftpd-zh-cn"
@@ -97,13 +97,13 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-zerotier luci-i18n-zerotier-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-nlbwmon luci-i18n-nlbwmon-zh-cn"
 
 # 上网时间控制
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-timecontrol luci-i18n-timecontrol-zh-cn"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-timecontrol luci-i18n-timecontrol-zh-cn"
 
 # 访问控制
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-accesscontrol luci-i18n-accesscontrol-zh-cn"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-accesscontrol luci-i18n-accesscontrol-zh-cn"
 
 # usb声卡
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-audio alsa-ucm-conf luci-i18n-music-remote-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-audio alsa-ucm-conf"
 
 # airplay
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-sound-core"
