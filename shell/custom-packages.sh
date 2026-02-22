@@ -101,3 +101,6 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-timecontrol luci-i18n-timecontrol-zh-
 
 # 访问控制
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-accesscontrol luci-i18n-accesscontrol-zh-cn"
+
+# usb声卡
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-audio alsa-ucm-conf luci-i18n-music-remote-zh-cn"
