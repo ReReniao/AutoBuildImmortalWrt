@@ -107,3 +107,6 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-audio alsa-ucm-conf luci-i18n-music-r
 
 # airplay
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-sound-core"
+
+# 定时网络唤醒
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-timewol-zh-cn"
