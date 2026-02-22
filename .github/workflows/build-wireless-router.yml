@@ -489,6 +489,11 @@ on:
         description: "请设置路由器的管理地址 格式:192.168.x.1 或 10.x.x.1"
         required: true
         default: "192.168.123.1"
+      rootfs_size:
+        description: "固件大小 (MB) - 默认1024MB，你的N60 Pro改造版建议512-1024"
+        required: false
+        default: "512"
+        type: string
       enable_store:
         description: "集成 store 商店"
         required: false
@@ -561,7 +566,8 @@ jobs:
       - name: Build Wireless ImmortalWrt
         run: |
           profile="${{ github.event.inputs.profile }}"
-          echo "Building for profile: $profile"
+          rootfs_size="${{ github.event.inputs.rootfs_size }}"
+          echo "Building for profile: $profile with rootfs size: ${rootfs_size}MB"
           include_docker="${{ github.event.inputs.include_docker }}"
           # 默认平台
           echo "platform=mediatek/filogic" >> $GITHUB_ENV
@@ -643,6 +649,7 @@ jobs:
               -v "${{ github.workspace }}/shell:/home/build/immortalwrt/shell" \
               -v "${{ github.workspace }}/mediatek-filogic/build24.sh:/home/build/immortalwrt/build.sh" \
               -e PROFILE=$profile \
+              -e ROOTFS_SIZE=$rootfs_size \
               -e INCLUDE_DOCKER=$include_docker \
               -e ENABLE_PPPOE=${{ inputs.enable_pppoe }} \
               -e PPPOE_ACCOUNT=${{ inputs.pppoe_account }} \
@@ -659,14 +666,17 @@ jobs:
             echo -e "NO docker"
           fi
           custom_router_ip="${{ github.event.inputs.custom_router_ip }}"
+          rootfs_size="${{ github.event.inputs.rootfs_size }}"
           extra_content_ip="#### 管理地址 $custom_router_ip"
+          extra_content_size="#### 固件大小 ${rootfs_size}MB"
           echo -e "\n $extra_content_ip" >> ${{ github.workspace }}/mediatek-filogic/info.md
+          echo -e "\n $extra_content_size" >> ${{ github.workspace }}/mediatek-filogic/info.md
           
           
       - name: Upload ImmortalWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: ${{ github.event.inputs.profile }}
+          tag_name: ${{ github.event.inputs.profile }}-${{ github.event.inputs.rootfs_size }}mb
           name: ImmortalWrt-Wireless
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
