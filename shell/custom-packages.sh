@@ -104,3 +104,6 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-accesscontrol luci-i18n-accesscontrol
 
 # usb声卡
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-usb-audio alsa-ucm-conf luci-i18n-music-remote-zh-cn"
+
+# airplay
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-sound-core"
