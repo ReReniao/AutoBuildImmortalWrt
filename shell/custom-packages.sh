@@ -112,3 +112,5 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES kmod-sound-core"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-timewol-zh-cn"
 # ttyd
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-ttyd luci-i18n-ttyd-zh-cn"
+# eqos
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-eqos luci-i18n-eqos-zh-cn"
