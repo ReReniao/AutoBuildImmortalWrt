@@ -33,7 +33,7 @@ fi
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting build process..."
 
 OFFICIAL="https://downloads.immortalwrt.org"
-MIRROR="https://mirrors.sjtug.sjtu.edu.cn/immortalwrt"
+MIRROR="https://mirrors.cernet.edu.cn/immortalwrt"
 echo ">>> official failed, switching to mirror"
 BASE_URL="$MIRROR"
 echo "Using BASE_URL = $BASE_URL"
