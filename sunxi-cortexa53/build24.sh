@@ -32,6 +32,16 @@ fi
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting build process..."
 
+OFFICIAL="https://downloads.immortalwrt.org"
+MIRROR="https://mirrors.sjtug.sjtu.edu.cn/immortalwrt"
+echo ">>> official failed, switching to mirror"
+BASE_URL="$MIRROR"
+echo "Using BASE_URL = $BASE_URL"
+echo "========================================"
+echo "Updating repositories.conf"
+echo "========================================"
+sed -i "s#${OFFICIAL}#${BASE_URL}#g" repositories.conf
+cat repositories.conf
 
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
